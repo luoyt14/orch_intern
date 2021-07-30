@@ -1,0 +1,1 @@
+python tools/test.py configs/deeplabv3plus/deeplabv3plus_r18-d8_512x512_40k_water.py work_dirs/deeplabv3plus_r18-d8_512x512_40k_water/latest.pth --eval mIoU --show-dir work_dirs/deeplabv3plus_r18-d8_512x512_40k_water/JPEGImages_deeplabv3plus-r18/

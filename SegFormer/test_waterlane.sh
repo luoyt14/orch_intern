@@ -1,0 +1,1 @@
+python tools/test.py local_configs/segformer/B5/segformer.b5.512x512.pascalwater.40k.py work_dirs/segformer.b5.512x512.pascalwater.40k/latest.pth --eval None --show-dir work_dirs/segformer.b5.512x512.pascalwater.40k/Picture_test_segformer_0.5/ --opacity 0.5
