@@ -54,3 +54,8 @@
 1. 包含两种方法，第一种论文Adaptive Inverse Perspective Mapping for Lane Map Generation with SLAM中使用的方法，在`inverse_perspective_mapping/Adaptive_IPM`路径下；第二种为基于单应性矩阵的方法，在`inverse_perspective_mapping/Homography_IPM`路径下
 2. 第二种方法鲁棒性更好，具体可见该文件夹下的说明文档
 
+## 生成labelme格式的json文件
+
+1. 路径：`create_labelme_json`
+2. 将得到的分割图像转换为labelme可读取的json文件，方便进一步微调标记区域来得到更多的训练数据，并且将分割图进行了初步的筛选，将异常的图像名写入到文件中。具体见代码`create_labelme_json/create_label.py`
+
