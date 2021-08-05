@@ -1,6 +1,15 @@
-# 代码配置与运行
+# 陕西欧卡智舶实习
 
-## SETR和DeepLabv3plus (3090服务器)
+> 清华大学博士生暑期实践
+
+## 主要内容：
+
+1. 语义分割水岸线检测、lane detection
+2. IPM测距
+3. 分割图转labelme格式json脚本
+4. 报告见report文件夹
+
+### SETR和DeepLabv3plus (3090服务器)
 
 1. 代码及配置好环境的路径：`3090服务器 /mnt/projects/luoyt/mmsegmentation`
 2. 代码执行需要的conda虚拟环境：`conda activate luoyt`
@@ -19,7 +28,7 @@
    *  `test.sh, test_deeplabv3plus_r18.sh`测试的脚本
    *  `workdirs/`训练得到的模型、训练的log、测试时可视化的图像等
 
-## SegFormer (3090服务器)
+### SegFormer (3090服务器)
 
 1. 代码及配置好环境的路径：`3090服务器 /mnt/projects/luoyt/SegFormer`
 2. 代码执行需要的conda虚拟环境：`conda activate segformer`
@@ -35,7 +44,7 @@
    *  `train.sh`：训练的脚本
    *  `test.sh`：测试的脚本。对于有label的数据评测mIoU，需要指定`--eval mIoU`，对于没有label的数据无法评测，需要指定`--eval None`。保存可视化结果的路径通过`--show-dir`指定
 
-## Ultra Fast Lane Detection (1070服务器)
+### Ultra Fast Lane Detection (1070服务器)
 
 1. 代码及配置好环境的路径：`/home/klfy/projects/lyt/water_lane_detection_90`
 2. 代码执行需要的conda虚拟环境：`conda activate deeplab`
@@ -49,12 +58,12 @@
    * 训练：`python train.py configs/water.py`
    * 生成测试集可视化图像：`python demo.py configs/water.py --test_model logs/20210716_154909_lr_4e-04_b_32/ep029.pth`
 
-## 逆投影算法
+### 逆投影算法
 
 1. 包含两种方法，第一种论文Adaptive Inverse Perspective Mapping for Lane Map Generation with SLAM中使用的方法，在`inverse_perspective_mapping/Adaptive_IPM`路径下；第二种为基于单应性矩阵的方法，在`inverse_perspective_mapping/Homography_IPM`路径下
 2. 第二种方法鲁棒性更好，具体可见该文件夹下的说明文档
 
-## 生成labelme格式的json文件
+### 生成labelme格式的json文件
 
 1. 路径：`create_labelme_json`
 2. 将得到的分割图像转换为labelme可读取的json文件，方便进一步微调标记区域来得到更多的训练数据，并且将分割图进行了初步的筛选，将异常的图像名写入到文件中。具体见代码`create_labelme_json/create_label.py`
